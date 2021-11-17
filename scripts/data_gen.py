@@ -305,8 +305,8 @@ class DataGenerator:
         idx = 0
         res = ''
         for ortho in self.X:
-            # sem = self.y[p[idx]]
-            sem = self.y[idx]
+            sem = self.y[p[idx]]
+            # sem = self.y[idx]
             list_ortho = list(ortho)
             inp = self.write_to_ex(list_ortho)
             out = self.write_to_ex(sem['ex'])
