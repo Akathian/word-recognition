@@ -1,0 +1,235 @@
+set seed 200
+set drop 0.1
+set saveTestRuns 4
+set numEpochs 500
+set hiddenSize 400
+set exampleFolder ./training_data/example_files/
+set lang EN
+set corpus blOS
+set fixation_type uniform
+set exampleParams fr0.5_dr0.1lin_ins21_wrd5233_rnd50
+set exampleSubFolder EN_blOS_fr0.5_dr0.1lin_ins21_wrd5233_rnd50
+set ioSize 28
+
+addNet HebEnglish
+
+
+### ADDING THE LAYERS ############
+addGroup l0  $ioSize          INPUT
+addGroup l1  $ioSize          INPUT
+addGroup l2  $ioSize          INPUT
+
+addGroup l3  $ioSize          INPUT
+addGroup l4  $ioSize          INPUT
+addGroup l5  $ioSize          INPUT
+addGroup l6  $ioSize          INPUT
+
+addGroup Hidden $hiddenSize
+
+addGroup o0  $ioSize          OUTPUT
+addGroup o1  $ioSize          OUTPUT
+addGroup o2  $ioSize          OUTPUT
+addGroup o3  $ioSize          OUTPUT
+addGroup o4  $ioSize          OUTPUT
+addGroup o5  $ioSize          OUTPUT
+addGroup o6  $ioSize          OUTPUT
+
+# additional code for representing localist lexical outputs.  Not currently used
+#addGroup Hidden2 $hiddenSize
+#addGroup o_lex 8145          OUTPUT SOFT_MAX
+
+
+###CONNECTING GROUPS ###
+connectGroups   {l0 l1 l2 l3 l4 l5 l6} Hidden
+connectGroups Hidden {o0 o1 o2 o3 o4 o5 o6} -type ho
+#connectGroups {o0 o1 o2 o3 o4 o5 o6} Hidden2
+#connectGroups Hidden2 o_lex
+
+###setting default mean weights and random ranges from
+### different layers in the network to produce a reasonable
+### initial hidden layer and output layer activity and activity
+### distribution
+setLinkValues randMean -1.8 -t bias
+setLinkValues randMean -1.0 -group Hidden -t bias
+setLinkValues randRange 0.1 -type ho
+
+
+#this plots the error by default when the gui is invoked.
+autoPlot
+
+### UNUSED lesioning code; helpful when pre-training networks
+### with the localist outputs enabled.
+#lesionUnits o_lex 1.0
+#lesionUnits Hidden2 1.0
+
+
+loadExamples ${exampleFolder}${exampleSubFolder}/train.ex.txt -s tr_${exampleParams}
+loadExamples ${exampleFolder}${exampleSubFolder}/exp.ex.txt -s exp_${exampleParams}
+loadExamples ${exampleFolder}${exampleSubFolder}/train.ideal.ex.txt -s tr_ideal_${exampleParams}
+loadExamples ${exampleFolder}${exampleSubFolder}/exp.ideal.ex.txt -s exp_ideal_${exampleParams}
+
+#reduced momentum to 0.9 from 0.95 and increased learningrate by factor of 100 to  0.00001
+#lrate of 0.00001 is too high.  lowering one order of magnitude
+#still too high, back to where we started.
+setObj pseudoExampleFreq 1
+setObj learningRate 0.0000001 
+setObj  momentum           0.90
+setObj  randRange          0.5
+setObj  targetRadius       0.1
+setObj  numUpdates         1000
+setObj  testGroupCrit      0.5
+setObj trainGroupCrit 0.5
+setObj reportInterval 1
+#setObj weightDecay 0.0001
+setObj rateIncrement 0.15
+setObj rateDecrement 0.9
+#setObj batchSize 100
+
+train -algorithm steepest -setOnly
+
+resetNet
+
+# Save the initialized weights
+# generated for the code above in case we want to load t
+# and replicate this exact simulation in the future
+# Save weights in a subfolder to keep things organized
+file mkdir ./savedTrainingWeights/${exampleSubFolder}
+saveWeights ./savedTrainingWeights/${exampleSubFolder}/${seed}seed_${hiddenSize}hid_[getObj weightDecay]decay_epoch[getObj totalUpdates].wt.gz -v 3 -text
+#loadWeights HE_1000hid_nodecay_multi_par.INIT.wt.gz
+
+
+graphObj error
+#graphObj {o0.error o1.error o2.error o3.error o4.error o5.error o6.error}
+
+proc outTarg {} {
+
+        global f
+
+        set gr {o0 o1 o2 o3 o4 o5 o6}
+        set ty {output target}
+
+        foreach t $ty {
+
+                puts -nonewline $f  "[getObj net(0).currentExample.name]|$t "
+                foreach g $gr {
+                        for {set u 0} {$u < [getObj $g.numUnits]} {incr u} {
+                                puts -nonewline $f  "[getObj $g.unit($u).$t] "
+                        }
+                }
+                puts $f ""
+        }
+}
+
+set f ""
+
+#### Function to save and test the network
+proc saveTest {} {
+
+        global f
+        global seed
+        global numEpochs
+        global hiddenSize
+        global exampleSubFolder
+        global exampleParams
+        global exampleFolder
+        global saveTestRuns
+
+        setObj postExampleProc {outTarg}
+
+        # Need to view units to be able to access the history arrays.
+        viewUnits
+
+        set modelFolderParams ${seed}seed_${hiddenSize}hid_${saveTestRuns}TestRuns_${numEpochs}UpdateEpoch_[getObj weightDecay]decay
+        set modelParams ${seed}seed_${hiddenSize}hid_[getObj weightDecay]decay_[getObj totalUpdates]epoch
+
+        set out_trfile ${exampleFolder}${exampleSubFolder}/output/${modelFolderParams}/tr_${modelParams}.txt
+        set f [open $out_trfile w]
+        useTestingSet tr_${exampleParams}
+        set testResult [test -return]
+        puts $testResult
+        close $f
+        exec gzip -f $out_trfile
+
+        set out_exfile ${exampleFolder}${exampleSubFolder}/output/${modelFolderParams}/ex_${modelParams}.txt
+        set f [open $out_exfile w]
+        useTestingSet exp_${exampleParams}
+        set testResult [test -return]
+        puts $testResult
+        close $f
+        exec gzip -f $out_exfile
+
+
+        set out_tr_ideal_file ${exampleFolder}${exampleSubFolder}/output/${modelFolderParams}/ideal/tr_ideal_${modelParams}.txt
+        set f [open $out_tr_ideal_file w]
+        useTestingSet tr_ideal_${exampleParams}
+        set testResult [test -return]
+        puts $testResult
+        close $f
+        exec gzip -f $out_tr_ideal_file
+
+        set out_ex_ideal_file ${exampleFolder}${exampleSubFolder}/output/${modelFolderParams}/ideal/ex_ideal_${modelParams}.txt
+        set f [open $out_ex_ideal_file w]
+        useTestingSet exp_ideal_${exampleParams}
+        set testResult [test -return]
+        puts $testResult
+        close $f
+        exec gzip -f $out_ex_ideal_file
+
+        saveWeights ${exampleFolder}${exampleSubFolder}/output/${modelFolderParams}/weights/${seed}seed_${hiddenSize}hid_[getObj weightDecay]decay_epoch[getObj totalUpdates].wt.gz -v 3 -text
+
+        # the performance on the prototype examples.
+        setObj postExampleProc {}
+}
+
+
+set modelFolder ${seed}seed_${hiddenSize}hid_${saveTestRuns}TestRuns_${numEpochs}UpdateEpoch_[getObj weightDecay]decay
+set error_linearity_file ${exampleFolder}${exampleSubFolder}/output/${modelFolder}/error_linearity_log.txt
+
+set err_lin_f [open $error_linearity_file w]
+puts -nonewline $err_lin_f  "epoch,language,corpus,seed,drop,hidden_units,fixation_type,error,linearity\n"
+flush $err_lin_f
+
+# write error and gradient linearity of each epoch to a separate log file
+proc writeErrorGrad {} {
+        global err_lin_f
+        global seed
+        global lang
+        global hiddenSize
+        global corpus
+        global fixation_type
+        global drop
+
+        puts -nonewline $err_lin_f  "[getObj totalUpdates],${lang},${corpus},${seed},${drop},${hiddenSize},${fixation_type},[getObj error],[getObj gradientLinearity]\n"
+        flush $err_lin_f
+}
+
+
+### FUNCTION TO TRAIN AND TEST THE NETWORK EVERY x EPOCHS
+# with 500 epochs x 20, this will train for 10k epochs
+# set saveTestRuns 20
+
+proc trainIt {} {
+        global err_lin_f
+        global saveTestRuns
+        global numEpochs
+        setObj postUpdateProc {writeErrorGrad}
+
+        set firstEpoch [expr ${numEpochs} - 25]
+        steepest 25
+        
+        delta ${firstEpoch}
+        saveTest
+        
+
+        for {set i 0} {$i < $saveTestRuns} {incr i} {
+                delta ${numEpochs}
+                saveTest
+        }
+
+        setObj postUpdateProc {}
+}
+
+trainIt
+close $err_lin_f
+
+exit

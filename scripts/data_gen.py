@@ -291,7 +291,7 @@ class DataGenerator:
         for key in words.keys():
             if words[key] == inp:
                 return key
-        raise Error
+        raise Exception
 
     def shuffle(self, arrays):
         prev_len = len(arrays[0])
