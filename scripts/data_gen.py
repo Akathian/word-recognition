@@ -171,12 +171,12 @@ class DataGenerator:
             else:
                 probOn = maxProbOn
 
-            if c < nCategories / 2:
-                probDistort = minProbDistort  # high dominance
-                dominance = 'high_dominance'
-            else:
-                probDistort = maxProbDistort  # low dominance
-                dominance = 'low_dominance'
+            # if c < nCategories / 2:
+            #     probDistort = minProbDistort  # high dominance
+            #     dominance = 'high_dominance'
+            # else:
+            #     probDistort = maxProbDistort  # low dominance
+            #     dominance = 'low_dominance'
 
             probOn = minProbOn + c * \
                 (maxProbOn-minProbOn) / (float((nCategories-1)))
@@ -199,13 +199,13 @@ class DataGenerator:
             members_info_map = dict()
             # while (m < nMembers and attempts < 1000): # add max attemps = 1000
             while (m < nMembers):  # add max attemps = 1000
-                # if m < nMembers / 2:
-                #     probDistort = minProbDistort  # high dominance
-                #     dominance = 'high-dominance'
-                # else:
-                #     probDistort = maxProbDistort  # low dominance
-                #     dominance = 'low-dominance'
-                #     attempts += 1
+                if m < nMembers / 2:
+                    probDistort = minProbDistort  # high dominance
+                    dominance = 'high-dominance'
+                else:
+                    probDistort = maxProbDistort  # low dominance
+                    dominance = 'low-dominance'
+                    attempts += 1
                 # generate new potential item
                 new = True
                 numOn = 0
