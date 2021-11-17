@@ -51,7 +51,8 @@ class DataGenerator:
             self.present_features_indices.append(present_features)
             rep[int(present_features[0])] = 1
             rep[int(present_features[1])] = 1
-
+            print(rep)
+            1/0
             self.letters[letter] = rep
 
     def generate_words(self, num_words, non_word=False):

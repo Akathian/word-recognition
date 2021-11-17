@@ -20,8 +20,8 @@ setLinkValues 	randMean	-1.7		-type bias
 autoPlot
 graphObj error
 
-loadExamples c90.ex -s train
-loadExamples c90dominance.ex -s train
+# loadExamples c90.ex -s train
+loadExamples inputc90dominance.ex -s train
 setObj train.graceTime 3.0
 setObj train.minTime 4
 setObj train.maxTime 4

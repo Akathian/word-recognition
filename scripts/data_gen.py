@@ -1,4 +1,6 @@
 import numpy as np
+from numpy.core.defchararray import asarray
+from numpy.lib.arraysetops import unique
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
 from tensorflow import keras
@@ -7,7 +9,7 @@ from tensorflow.keras.layers import Dense, Bidirectional, SimpleRNN, LSTM, Embed
 from keras import utils as np_utils
 import os.path
 from os import path
-
+import math
 np.random.seed(0)
 
 
@@ -17,7 +19,6 @@ class DataGenerator:
         self.vowels = ['A', 'E', 'I', 'O', 'U']
         self.present_features_indices = ['']
         self.letters = dict()
-
         self.words_ortho = dict()
         self.words_ortho[''] = []
 
@@ -75,32 +76,63 @@ class DataGenerator:
 
         words_dict = self.words_ortho if not non_word else self.non_words_ortho
 
-        for i in range(num_words):
-            word = ''
-            ortho = []
-            while(word in words_dict):
+        ortho_str = ''
+        orthos = [ortho_str]
+        word = ''
+        for _ in range(num_words):
+            while(word in words_dict.keys() or ortho_str in orthos):
                 word, ortho = get_word(non_word)
+                ortho_str = "".join(list(map(str, ortho)))
 
             words_dict[word] = ortho
+            orthos.append(ortho_str)
+
+        assert len(words_dict.keys()) == len(np.unique(np.asarray(list(words_dict.keys())))
+                                             ), f'{len(words_dict.keys())} != {len(np.unique(np.asarray(list(words_dict.keys()))))}'
 
         del words_dict['']
 
-    def similarity(self, input, others):
+        word_ortho = list(self.words_ortho.values())
+        orthos = []
+        for o in word_ortho:
+            o = list(map(str, o))
+            o = "".join(o)
+            orthos.append(o)
+        orthos = np.asarray(orthos)
+
+        assert len(np.unique(orthos)) == len(
+            word_ortho), f'{len(np.unique(orthos))} != {len(word_ortho)}'
+
+    def similarity(self, input, others, typ):
         min = 1000
         sum = min
-        input = list(map(int, list(input)))
-        if input == []:
+        if typ == 'y':
+            inp = list(map(int, list(input['ex'])))
+        else:
+            inp = list(map(int, list(input)))
+        if inp == []:
             return 0
         for other in others:
-            other = list(map(int, list(other)))
-            if other != []:
-                inp3 = np.logical_xor(input, other)
-                sum = np.sum(inp3)
+            if typ == 'y':
+                oth = list(map(int, list(other['ex'])))
+            else:
+                oth = list(map(int, list(other)))
+            if oth != []:
+                sum = np.sum(abs(np.asarray(inp) - np.asarray(oth)))
             else:
                 sum = 1000
 
-            if sum < min:
-                min = sum
+            if sum < 4:
+                if typ == 'y':
+                    print(" ".join(list(map(str, input['ex']))))
+                    print(" ".join(list(map(str, other['ex']))))
+                    print('------------------------------------')
+            if sum == 0:
+                if typ != 'y':
+                    print(" ".join(list(map(str, input))))
+                    print(" ".join(list(map(str, other))))
+                    print('------------------------------------')
+
         return sum
 
     def generate_semantics(self):
@@ -126,9 +158,9 @@ class DataGenerator:
                 return True
             return False
 
-        proto = [0] * MAX_NFEATURES
-        item = [0] * MAX_NFEATURES
-        cats = [[[0] * MAX_NFEATURES] * MAX_NMEMBERS] * MAX_NCATEGORIES
+        proto = [0] * nFeatures
+        item = [0] * nFeatures
+        cats = [[[0] * nFeatures] * nMembers] * nCategories
         for c in range(nCategories):
             dominance = ''
             category_num = c
@@ -193,10 +225,11 @@ class DataGenerator:
 
                 om = 0
                 while om < m and new:
-                    nDiff = 0
-                    for f in range(nFeatures):
-                        if item[f] != cats[c][om][f]:
-                            nDiff += 1
+                    # for f in range(nFeatures):
+                    nDiff = np.sum(
+                        abs(np.asarray(item) - np.asarray(cats[c][om])))
+                    # if item[f] != cats[c][om][f]:
+                    #     nDiff += 1
                     if (nDiff < minDiff):
                         new = False
                     if (nDiff > maxWCatDiff):
@@ -211,10 +244,8 @@ class DataGenerator:
                 while oc < c and new:
                     om = 0
                     while om < nMembers and new:
-                        nDiff = 0
-                        for f in range(nFeatures):
-                            if item[f] != cats[oc][om][f]:
-                                nDiff += 1
+                        nDiff = np.sum(
+                            abs(np.asarray(item) - np.asarray(cats[c][om])))
                         if nDiff < minDiff:
                             new = False
                         om += 1
@@ -224,8 +255,7 @@ class DataGenerator:
                     # print(c, ' Failed diff check 2', ' nDiff ', nDiff < minDiff, new)
                     continue
 
-                for f in range(nFeatures):
-                    cats[c][m][f] = item[f]
+                cats[c][m] = item[:nFeatures]
 
                 members_info_map[m] = {'category': 'category-' + str(category_num),
                                        'dominance': dominance, 'ex': cats[c][m][:nFeatures]}
@@ -245,6 +275,13 @@ class DataGenerator:
     def generate_inputs_and_outputs(self):
         # inputs
         word_ortho = list(self.words_ortho.values())
+        orthos = []
+        for o in word_ortho:
+            o = list(map(str, o))
+            o = "".join(o)
+            orthos.append(o)
+        orthos = np.asarray(orthos)
+        assert len(np.unique(orthos)) == len(word_ortho)
         # non_word_ortho = list(self.non_words_ortho.values())
         # all_ortho = np.asarray(word_ortho + non_word_ortho)
         all_ortho = np.asarray(word_ortho)
@@ -268,8 +305,8 @@ class DataGenerator:
         idx = 0
         res = ''
         for ortho in self.X:
-            sem = self.y[p[idx]]
-            # sem = self.y[idx]
+            # sem = self.y[p[idx]]
+            sem = self.y[idx]
             list_ortho = list(ortho)
             inp = self.write_to_ex(list_ortho)
             out = self.write_to_ex(sem['ex'])
@@ -277,7 +314,7 @@ class DataGenerator:
             res += 'name: ' + '{' + str(idx) + '_' + word + '_' + sem['dominance'] + '_' + str(sem['category']) + '}' + \
                 '\n' + inp + '\n' + out + '\n' + ';\n'
             idx += 1
-        self.ex_file_buf = res
+        self.inp_ex_file_buf = res
 
     def write_to_ex(self, row):
         if len(row) == 100:  # target
@@ -289,7 +326,8 @@ class DataGenerator:
     def get_name(self, inp):
         words = self.words_ortho
         for key in words.keys():
-            if words[key] == inp:
+            d = np.sum(abs(np.asarray(words[key]) - np.asarray(inp)))
+            if d == 0:
                 return key
         raise Exception
 
@@ -305,6 +343,33 @@ class DataGenerator:
 
 
 dg = DataGenerator()
-ex = dg.ex_file_buf
-f = open("../data/c90dominance.ex", "w")
+ex = dg.inp_ex_file_buf
+f = open("/Users/akathian/Desktop/School/akathian05@gmail.com/LinuxDesk/word-recognition/data/inputc90dominance.ex", "w")
 f.write(ex)
+
+# min = -1
+# list_dgY = list(dg.y)
+# while len(list_dgY) > 0:
+#     inp = list_dgY.pop()
+#     d = dg.similarity(inp, list_dgY, 'y')
+#     if d < min:
+#         min = d
+# print(min)
+
+# min = -1
+# list_dgX = list(dg.X)
+# while len(list_dgX) > 0:
+#     inp = list_dgX.pop()
+#     d = dg.similarity(inp, list_dgX, 'x')
+#     if d < min:
+#         min = d
+# print(min)
+
+min = math.inf
+list_dgX = list(dg.words_ortho.values())
+while len(list_dgX) > 0:
+    inp = list_dgX.pop()
+    d = dg.similarity(inp, list_dgX, 'x')
+    if d < min:
+        min = d
+print(min)
