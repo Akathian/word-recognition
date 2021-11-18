@@ -10,11 +10,12 @@ from keras import utils as np_utils
 import os.path
 from os import path
 import math
-np.random.seed(0)
 
 
 class DataGenerator:
-    def __init__(self):
+    def __init__(self, seed):
+        np.random.seed(seed)
+        self.seed = seed
         self.consonnants = ['B', 'D', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T']
         self.vowels = ['A', 'E', 'I', 'O', 'U']
         self.present_features_indices = ['']
@@ -34,7 +35,7 @@ class DataGenerator:
 
         self.generate_orth_rep_for_letters()
         self.generate_words(128)
-        # self.generate_words(128, non_word=True)
+        self.generate_words(128, non_word=True)
         self.generate_semantics()
         self.generate_inputs_and_outputs()
 
@@ -275,6 +276,7 @@ class DataGenerator:
     def generate_inputs_and_outputs(self):
         # inputs
         word_ortho = list(self.words_ortho.values())
+        non_word_ortho = np.asarray(list(self.non_words_ortho.values()))
         orthos = []
         for o in word_ortho:
             o = list(map(str, o))
@@ -310,21 +312,40 @@ class DataGenerator:
             list_ortho = list(ortho)
             inp = self.write_to_ex(list_ortho)
             out = self.write_to_ex(sem['ex'])
-            word = self.get_name(list_ortho)
+            word = self.get_name(list_ortho, self.words_ortho)
             res += 'name: ' + '{' + str(idx) + '_' + word + '_' + sem['dominance'] + '_' + str(sem['category']) + '}' + \
                 '\n' + inp + '\n' + out + '\n' + ';\n'
             idx += 1
-        self.inp_ex_file_buf = res
+        self.word_ex_file_buf = res
+
+        f = open("../data/ex/" + str(self.seed) + "trainDataSeed" + ".ex", "w")
+        f.write(self.word_ex_file_buf)
+
+        idx = 0
+        res = ''
+        for ortho in non_word_ortho:
+            list_ortho = list(ortho)
+            inp = self.write_to_ex(list_ortho)
+            out = self.write_to_ex([0] * 100)
+            word = self.get_name(list_ortho, self.non_words_ortho)
+            res += 'name: ' + '{' + str(idx) + '_' + word + '}' + \
+                '\n' + inp + '\n' + out + '\n' + ';\n'
+            idx += 1
+        self.nonword_ex_file_buf = res
+
+        f = open("../data/ex/" + str(self.seed) + "testDataSeed" + ".ex", "w")
+        f.write(self.nonword_ex_file_buf)
 
     def write_to_ex(self, row):
         if len(row) == 100:  # target
             data_type = "T: "
         elif len(row) == 18:  # input
             data_type = "I: "
+        else:
+            print(len(row))
         return data_type + " ".join(map(str, row))
 
-    def get_name(self, inp):
-        words = self.words_ortho
+    def get_name(self, inp, words):
         for key in words.keys():
             d = np.sum(abs(np.asarray(words[key]) - np.asarray(inp)))
             if d == 0:
@@ -342,10 +363,8 @@ class DataGenerator:
         return ret
 
 
-dg = DataGenerator()
-ex = dg.inp_ex_file_buf
-f = open("/Users/akathian/Desktop/School/akathian05@gmail.com/LinuxDesk/word-recognition/data/inputc90dominance.ex", "w")
-f.write(ex)
+dg = DataGenerator(seed=0)
+
 
 # min = -1
 # list_dgY = list(dg.y)
