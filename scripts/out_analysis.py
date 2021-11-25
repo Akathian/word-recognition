@@ -3,11 +3,28 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 from scipy import stats
+import os
 
 
-def save_to_csv(words, save_loc):
-    cols = ['word', 'dominance', 'stress', 'category', 'data_seed', 'net_seed', 'hidden_size', 'weight_decay', 'ex_type', 'diff_thresh0.5', 'rt_thresh0.5',
-            'st_thresh0.5', 'acc_thresh0.5', 'avg_out_diff_tick_1']
+def save_to_csv(words, save_loc, st_threshold):
+    cols = [
+        'word',
+        'dominance',
+        'category',
+        'frequency',
+        'richness',
+        'data_seed',
+        'net_seed',
+        'hidden_size',
+        'weight_decay',
+        'ex_type',
+        # 'diff_thresh0.5',
+        # 'rt_thresh0.5',
+        f'rt_st{st_threshold}',
+        f'acc_thresh0.5_st{st_threshold}',
+        # 'acc_thresh0.5',
+        'avg_out_diff_tick_1'
+    ]
     for key in words.keys():
         row = [key]
         for i in range(1, len(cols) - 1):
@@ -18,6 +35,8 @@ def save_to_csv(words, save_loc):
             row.append(words[key]['avg_out_diff_tick_' + str(i+1)])
         for i in range(0, 20):
             row.append(words[key]['avg_out_tick_' + str(i+1)])
+        for i in range(0, 20):
+            row.append(words[key]['stress_at_tick_' + str(i+1)])
         words[key] = row
 
     out_diff_ticks = []
@@ -28,7 +47,11 @@ def save_to_csv(words, save_loc):
     for i in range(0, 20):
         out_ticks.append('avg_out_tick_' + str(i+1))
 
-    cols = cols + out_diff_ticks + out_ticks
+    stress_at_ticks = []
+    for i in range(0, 20):
+        stress_at_ticks.append('stress_at_tick_' + str(i+1))
+
+    cols = cols + out_diff_ticks + out_ticks + stress_at_ticks
 
     df = pd.DataFrame.from_dict(
         words,  columns=cols, orient='index')
@@ -49,12 +72,14 @@ def parse_line(line, in_format, file_type):
 
         name_details, epoch, net_params, tick, line_type = entries[:out_start]
         richness = 'NaN'
+        freq = 'NaN'
         if file_type == 'train':
-            num, name, dominance, category, richness, data_seed, ex_type = name_details.split(
+            num, name, dominance, category, richness, data_seed, freq, ex_type = name_details.split(
                 '_')
             dominance = get_param_val(dominance)
             category = get_param_val(category)
             richness = get_param_val(richness)
+            freq = get_param_val(freq)
         else:
             num, name, data_seed, ex_type = name_details.split('_')
             dominance = 'NaN'
@@ -65,7 +90,7 @@ def parse_line(line, in_format, file_type):
         net_seed = get_param_val(net_seed)
         data_seed = get_param_val(data_seed)
         tick = int(tick)
-        return entries, out_start, epoch, tick, line_type, name, dominance, category, richness, hidden_size, weight_decay, net_seed, data_seed, ex_type
+        return entries, out_start, epoch, tick, line_type, name, dominance, category, richness, hidden_size, weight_decay, net_seed, data_seed, freq, ex_type
     elif in_format == 2:  # Ian project formet
         entries = line.split('|')
         output = entries[-1].split(' ')
@@ -84,19 +109,22 @@ def stress(out):
     return stress
 
 
-def prev_word_cleanup(words, prev_name):
+def prev_word_cleanup(words, prev_name, st_threshold):
     del words[prev_name]['out']
     if 'targ' in words[prev_name].keys():
         del words[prev_name]['targ']
     if 'rt_thresh0.5' not in words[prev_name].keys():
         words[prev_name]['rt_thresh0.5'] = 'NaN'
-    if 'st_thresh0.5' not in words[prev_name].keys():
-        words[prev_name]['st_thresh0.5'] = 'NaN'
+    if 'rt_st0.01' not in words[prev_name].keys():
+        words[prev_name]['rt_st0.01'] = 'NaN'
     if 'acc_thresh0.5' not in words[prev_name].keys():
-        words[prev_name]['acc_thresh0.5'] = 0
+        words[prev_name]['acc_thresh0.5'] = 'NaN'
     if 'diff_thresh0.5' not in words[prev_name].keys():
         words[prev_name]['diff_thresh0.5'] = 'NaN'
-
+    if f'rt_st{st_threshold}' not in words[prev_name].keys():
+        words[prev_name][f'rt_st{st_threshold}'] = 'NaN'
+    if f'acc_thresh0.5_st{st_threshold}' not in words[prev_name].keys():
+        words[prev_name][f'acc_thresh0.5_st{st_threshold}'] = 'NaN'
     return words
 
 
@@ -109,7 +137,7 @@ def analyze(file, method, measure, in_format, st_threshold, file_type, save_loc)
     out_at_tick = dict()
     for line in lines:
         if in_format == 1:
-            entries, out_start, epoch, tick, line_type, name, dominance, category, richness, hidden_size, weight_decay, net_seed, data_seed, ex_type = parse_line(
+            entries, out_start, epoch, tick, line_type, name, dominance, category, richness, hidden_size, weight_decay, net_seed, data_seed, freq, ex_type = parse_line(
                 line, in_format, file_type)
         elif in_format == 2:
             entries, out_start, epoch, line_type, name = parse_line(
@@ -123,7 +151,7 @@ def analyze(file, method, measure, in_format, st_threshold, file_type, save_loc)
 
         # next word is presented
         if prev_name != name:
-            words = prev_word_cleanup(words, prev_name)
+            words = prev_word_cleanup(words, prev_name, st_threshold)
             if in_format == 2:
                 tick = 0
 
@@ -138,11 +166,12 @@ def analyze(file, method, measure, in_format, st_threshold, file_type, save_loc)
         words[name]['net_seed'] = net_seed
         words[name]['data_seed'] = data_seed
         words[name]['ex_type'] = ex_type
+        words[name]['frequency'] = freq
 
         if line_type == 'output':
             # all but last char bc its \n
             out = list(map(float, entries[out_start:len(entries) - 1]))
-            words[name]['stress'] = stress(out)
+            words[name]['stress_at_tick_' + str(tick)] = stress(out)
             out_at_tick[name][tick] = np.asarray(out)
             words[name]['avg_out_tick_' +
                         str(tick)] = np.average(np.asarray(out))
@@ -154,16 +183,24 @@ def analyze(file, method, measure, in_format, st_threshold, file_type, save_loc)
                 targ = list(map(float, entries[out_start:len(entries) - 1]))
                 words[name]['targ'] = np.asarray(targ)
 
+        has_processed_out_and_targ = 'out' in words[name].keys(
+        ) and 'targ' in words[name].keys()
+
         if tick in out_at_tick[name].keys() and (tick - 1) in out_at_tick[name].keys():
             prev_out = out_at_tick[name][tick-1]
             curr_out = out_at_tick[name][tick]
             act_change = np.average(abs(prev_out - curr_out))
-
             words[name]['avg_out_diff_tick_' + str(tick)] = act_change
-            if act_change < st_threshold and 'st_thresh0.5' not in words[name].keys():
-                words[name]['st_thresh0.5'] = tick
+            if act_change < st_threshold and f'rt_st{st_threshold}' not in words[name].keys():
+                words[name][f'rt_st{st_threshold}'] = tick
 
-        if 'out' in words[name].keys() and 'targ' in words[name].keys():
+        if f'rt_st{st_threshold}' in words[name].keys() and has_processed_out_and_targ and f'acc_thresh0.5_st{st_threshold}' not in words[name].keys():
+            out = words[name]['out']
+            targ = words[name]['targ']
+            diff = np.sum(abs(out-targ))
+            words[name][f'acc_thresh0.5_st{st_threshold}'] = diff
+
+        if has_processed_out_and_targ:
             out = words[name]['out']
             targ = words[name]['targ']
 
@@ -182,20 +219,20 @@ def analyze(file, method, measure, in_format, st_threshold, file_type, save_loc)
         prev_name = name
 
         if count == len(lines):
-            words = prev_word_cleanup(words, name)
+            words = prev_word_cleanup(words, name, st_threshold)
 
-    df = save_to_csv(words, save_loc)
+    df = save_to_csv(words, save_loc, st_threshold)
     print(df)
     # print(words['0_KOT']['rt_thresh0.5'], words['1_RON']['rt_thresh0.5'])
 
 
-def draw_graphs(df, file_type, save_loc):
-    name = 'Word' if file_type == 'train' else 'Non-Word'
+def get_plotting_data(df):
     avg_out_diffs = []
     stderr_out_diffs = []
     avg_outs = []
     stderr_outs = []
-    ticks = np.arange(20) + 1
+    avg_stresses = []
+    stderr_stresses = []
     for col in df.columns:
         if 'avg_out_diff' in col:
             numpy_col = df[col].to_numpy()
@@ -209,39 +246,90 @@ def draw_graphs(df, file_type, save_loc):
             stderr_of_col = stats.sem(numpy_col)
             avg_outs.append(avg_of_col)
             stderr_outs.append(stderr_of_col)
+        elif 'stress_at_tick' in col:
+            numpy_col = df[col].to_numpy()
+            avg_of_col = np.average(numpy_col)
+            stderr_of_col = stats.sem(numpy_col)
+            avg_stresses.append(avg_of_col)
+            stderr_stresses.append(stderr_of_col)
+    return avg_out_diffs, stderr_out_diffs, avg_outs, stderr_outs, avg_stresses, stderr_stresses
+
+
+def draw_graphs(df_train, df_test, save_loc, epoch_num):
+    avg_out_diffs_words, stderr_out_diffs_words, avg_outs_words, stderr_outs_words, avg_stresses_word, stderr_stresses_word = get_plotting_data(
+        df_train)
+    avg_out_diffs_nonwords, stderr_out_diffs_nonwords, avg_outs_nonwords, stderr_outs_nonwords, avg_stresses_nonword, stderr_stresses_nonword = get_plotting_data(
+        df_test)
+
+    ticks = np.arange(20) + 1
+
+    x_axis_labels = range(math.floor(min(ticks)), math.ceil(max(ticks))+1)
 
     plt.figure(figsize=(8, 6), dpi=80)
-    plt.errorbar(ticks, avg_out_diffs, yerr=stderr_out_diffs)
+    plt.xlabel('ticks')
+    plt.ylabel('average')
+    plt.xticks(x_axis_labels)
+
+    # out diffs ----------------
+    plt.errorbar(ticks, avg_out_diffs_words, yerr=stderr_out_diffs_words)
+    plt.errorbar(ticks, avg_out_diffs_nonwords,
+                 yerr=stderr_out_diffs_nonwords)
+    plt.legend(['words', 'nonwords'], loc=3)
+
     plt.title(
-        name + ' Averages of differences between output averages (tick_n - tick_(n-1))')
+        f'Averages of differences between output averages (tick_n - tick_(n-1)) epoch {epoch_num}')
     plt.savefig(save_loc + '_diffavgs.png')
 
+    # out avgs ----------------
     plt.figure(figsize=(8, 6), dpi=80)
-    plt.errorbar(ticks, avg_outs, yerr=stderr_outs)
-    plt.title(name + ' Averages of output averages')
+    plt.xlabel('ticks')
+    plt.ylabel('average')
+    plt.xticks(x_axis_labels)
+    plt.errorbar(ticks, avg_outs_words, yerr=stderr_outs_words)
+    plt.errorbar(ticks, avg_outs_nonwords, yerr=stderr_outs_nonwords)
+
+    plt.title(f'Averages of output averages epoch {epoch_num}')
+    plt.legend(['words', 'nonwords'], loc=3)
     plt.savefig(save_loc + '_outavgs.png')
+
+    # avg stress ----------------
+    plt.figure(figsize=(8, 6), dpi=80)
+    plt.xlabel('ticks')
+    plt.ylabel('average')
+    plt.xticks(x_axis_labels)
+    plt.errorbar(ticks, avg_stresses_word, yerr=stderr_stresses_word)
+    plt.errorbar(ticks, avg_stresses_nonword, yerr=stderr_stresses_nonword)
+
+    plt.title(f'Averages of stress epoch {epoch_num}')
+    plt.legend(['words', 'nonwords'], loc=3)
+    plt.savefig(save_loc + '_stressavgs.png')
+
     plt.show()
 
 
-epoch_num = 620
-base_path = '/Users/akathian/Desktop/School/akathian05@gmail.com/LinuxDesk/word-recognition/data/training_data/0seed_100hid_0TestRuns_800UpdateEpoch_0decay'
+def run_analysis(epoch_num):
+    base_path = '/Users/akathian/Desktop/School/akathian05@gmail.com/LinuxDesk/word-recognition/data/training_data/0seed_100hid_0TestRuns_800UpdateEpoch_0decay'
+    if not os.path.exists(f'{base_path}/analysis/{epoch_num}epoch'):
+        os.makedirs(f'{base_path}/analysis/{epoch_num}epoch')
 
-train_path = f'{base_path}/words_0seed_100hid_0decay_{epoch_num}epoch.txt'
-test_path = f'{base_path}/nonwords_0seed_100hid_0decay_{epoch_num}epoch.txt'
+    train_path = f'{base_path}/words_0seed_100hid_0decay_{epoch_num}epoch.txt'
+    test_path = f'{base_path}/nonwords_0seed_100hid_0decay_{epoch_num}epoch.txt'
 
-train_save_loc = f'{base_path}/words_analysis.csv'
-test_save_loc = f'{base_path}/nonwords_analysis.csv'
+    train_save_loc = f'{base_path}/analysis/{epoch_num}epoch/words_analysis_{epoch_num}.csv'
+    test_save_loc = f'{base_path}/analysis/{epoch_num}epoch/nonwords_analysis_{epoch_num}.csv'
 
-analyze(train_path, 1, 1, 1, 0.01, 'train', train_save_loc)
-analyze(test_path, 1, 1, 1, 0.01, 'test', test_save_loc)
+    analyze(train_path, 1, 1, 1, 0.01, 'train', train_save_loc)
+    analyze(test_path, 1, 1, 1, 0.01, 'test', test_save_loc)
 
-train_analysis = pd.read_csv(train_save_loc)
-test_analysis = pd.read_csv(test_save_loc)
+    train_analysis = pd.read_csv(train_save_loc)
+    test_analysis = pd.read_csv(test_save_loc)
 
-train_graph_save_loc = f'{base_path}/words_graph_analysis'
-test_graph_save_loc = f'{base_path}/nonwords_graph_analysis'
-draw_graphs(train_analysis, 'train', train_graph_save_loc)
-draw_graphs(test_analysis, 'test', test_graph_save_loc)
+    graph_save_loc = f'{base_path}/analysis/{epoch_num}epoch/graph_analysis_{epoch_num}'
+    draw_graphs(train_analysis, test_analysis, graph_save_loc, epoch_num)
+
+
+run_analysis(0)
+run_analysis(800)
 
 # cols
 # word degr netparams(From tr filename) acc rt

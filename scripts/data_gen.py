@@ -312,7 +312,7 @@ class DataGenerator:
             inp = self.write_to_ex(list_ortho)
             out = self.write_to_ex(sem['ex'])
             word = self.get_name(list_ortho, self.words_ortho)
-            name = f"{str(idx)}_{word}_{sem['dominance']}_{str(sem['category'])}_rich-{sem['richness']}_dataSeed-{self.seed}_word"
+            name = f"{str(idx)}_{word}_{sem['dominance']}_{str(sem['category'])}_rich-{sem['richness']}_dataSeed-{self.seed}_freq-{str(sem['freq'])}_word"
             res += 'name: ' + '{' + name + '}' + '\nfreq: ' + str(sem['freq']) + \
                 '\n' + inp + '\n' + out + '\n' + ';\n'
             idx += 1
