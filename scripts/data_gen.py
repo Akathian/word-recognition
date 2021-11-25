@@ -159,10 +159,9 @@ class DataGenerator:
                 return True
             return False
 
-        proto = [0] * nFeatures
-        item = [0] * nFeatures
         cats = [[[0] * nFeatures] * nMembers] * nCategories
         for c in range(nCategories):
+            proto = [0] * nFeatures
             dominance = ''
             category_num = c
             # print(c, '--------------------------------')
@@ -194,19 +193,19 @@ class DataGenerator:
                 if(proto[f] == 0):
                     proto[f] = 1
                     n += 1
-
             m = 0
             attempts = 0
             members_info_map = dict()
             # while (m < nMembers and attempts < 1000): # add max attemps = 1000
             while (m < nMembers):  # add max attemps = 1000
+                item = [0] * nFeatures
                 if m < nMembers / 2:
                     probDistort = minProbDistort  # high dominance
-                    dominance = 'high-dominance'
+                    dominance = 'dominance-high'
                 else:
                     probDistort = maxProbDistort  # low dominance
-                    dominance = 'low-dominance'
-                    attempts += 1
+                    dominance = 'dominance-low'
+                attempts += 1
                 # generate new potential item
                 new = True
                 numOn = 0
@@ -257,9 +256,10 @@ class DataGenerator:
                     continue
 
                 cats[c][m] = item[:nFeatures]
-
+                freq = 1 if m % 2 == 0 else 2
+                richness = np.sum(cats[c][m][:nFeatures])
                 members_info_map[m] = {'category': 'category-' + str(category_num),
-                                       'dominance': dominance, 'ex': cats[c][m][:nFeatures]}
+                                       'dominance': dominance, 'ex': cats[c][m][:nFeatures], 'freq': freq, 'richness': richness}
                 m += 1
 
             if attempts == 1000:
@@ -308,17 +308,17 @@ class DataGenerator:
         res = ''
         for ortho in self.X:
             sem = self.y[p[idx]]
-            # sem = self.y[idx]
             list_ortho = list(ortho)
             inp = self.write_to_ex(list_ortho)
             out = self.write_to_ex(sem['ex'])
             word = self.get_name(list_ortho, self.words_ortho)
-            res += 'name: ' + '{' + str(idx) + '_' + word + '_' + sem['dominance'] + '_' + str(sem['category']) + '}' + \
+            name = f"{str(idx)}_{word}_{sem['dominance']}_{str(sem['category'])}_rich-{sem['richness']}_dataSeed-{self.seed}_word"
+            res += 'name: ' + '{' + name + '}' + '\nfreq: ' + str(sem['freq']) + \
                 '\n' + inp + '\n' + out + '\n' + ';\n'
             idx += 1
         self.word_ex_file_buf = res
 
-        f = open("../data/ex/" + str(self.seed) + "trainDataSeed" + ".ex", "w")
+        f = open("../data/ex/words" + ".ex", "w")
         f.write(self.word_ex_file_buf)
 
         idx = 0
@@ -326,14 +326,16 @@ class DataGenerator:
         for ortho in non_word_ortho:
             list_ortho = list(ortho)
             inp = self.write_to_ex(list_ortho)
-            out = self.write_to_ex([0] * 100)
+            out = self.write_to_ex(['-'] * 100)
             word = self.get_name(list_ortho, self.non_words_ortho)
-            res += 'name: ' + '{' + str(idx) + '_' + word + '}' + \
-                '\n' + inp + '\n' + out + '\n' + ';\n'
+            name = f"{str(idx)}_{word}_dataSeed-{self.seed}_nonword"
+            res += 'name: ' + \
+                '{' + name + '}' + \
+                '\n' + inp + '\n' + out + ';\n'
             idx += 1
         self.nonword_ex_file_buf = res
 
-        f = open("../data/ex/" + str(self.seed) + "testDataSeed" + ".ex", "w")
+        f = open("../data/ex/nonwords" + ".ex", "w")
         f.write(self.nonword_ex_file_buf)
 
     def write_to_ex(self, row):
