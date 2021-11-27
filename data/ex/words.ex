@@ -3,8 +3,8 @@ freq: 1
 I: 0 1 0 1 0 0 0 1 0 0 1 0 1 1 0 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0
 ;
-name: {1_LOL_dominance-low_category-4_rich-8_dataSeed-0_freq-2_word}
-freq: 2
+name: {1_LOL_dominance-low_category-4_rich-8_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 0 0 0 1 0 1 0 1 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -18,8 +18,8 @@ freq: 1
 I: 0 1 0 0 0 1 1 0 0 0 0 1 0 1 0 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {4_MOR_dominance-high_category-3_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {4_MOR_dominance-high_category-3_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 0 0 0 1 0 1 0 1 1 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1
 ;
@@ -38,8 +38,8 @@ freq: 1
 I: 0 0 1 0 0 1 1 0 0 0 0 1 1 0 0 0 1 0
 T: 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
 ;
-name: {8_MUD_dominance-high_category-4_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {8_MUD_dominance-high_category-4_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 1 0 1 0 0 0 1 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -48,13 +48,13 @@ freq: 1
 I: 0 1 0 0 0 1 0 1 0 0 1 0 1 1 0 0 0 0
 T: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0
 ;
-name: {10_DER_dominance-high_category-3_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {10_DER_dominance-high_category-3_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 1 0 0 0 1 0 0 1 0 0 1 1 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1
 ;
-name: {11_TOL_dominance-high_category-0_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {11_TOL_dominance-high_category-0_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 0 0 1 0 0 0 1 0 1 0 1 0 1 0 0
 T: 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -73,28 +73,28 @@ freq: 1
 I: 0 0 1 0 0 1 1 0 1 0 0 0 0 0 1 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0
 ;
-name: {15_MUL_dominance-high_category-2_rich-8_dataSeed-0_freq-2_word}
-freq: 2
+name: {15_MUL_dominance-high_category-2_rich-8_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 1 0 1 0 0 0 0 1 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {16_MAM_dominance-high_category-2_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {16_MAM_dominance-high_category-2_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1
 ;
-name: {17_MIL_dominance-low_category-7_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {17_MIL_dominance-low_category-7_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 1 0 0 1 0 0 0 1 0 1 0 0
 T: 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0
 ;
-name: {18_RAN_dominance-low_category-3_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {18_RAN_dominance-low_category-3_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 1 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
 ;
-name: {19_DEN_dominance-high_category-6_rich-8_dataSeed-0_freq-2_word}
-freq: 2
+name: {19_DEN_dominance-high_category-6_rich-8_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 1 0 0 0 1 0 0 1 0 1 0 0 0 1 0
 T: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
 ;
@@ -108,13 +108,13 @@ freq: 1
 I: 1 0 0 1 0 0 1 0 1 0 0 0 0 0 0 1 0 0
 T: 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {22_KEB_dominance-high_category-5_rich-8_dataSeed-0_freq-2_word}
-freq: 2
+name: {22_KEB_dominance-high_category-5_rich-8_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0
 ;
-name: {23_BOK_dominance-high_category-7_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {23_BOK_dominance-high_category-7_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 0 1 1 0 0 0 1 0 1 0 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0
 ;
@@ -123,8 +123,8 @@ freq: 1
 I: 0 1 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0
 T: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {25_KOL_dominance-high_category-4_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {25_KOL_dominance-high_category-4_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 1 0 0 0 0 0 1 0 1 0 1 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
 ;
@@ -133,8 +133,8 @@ freq: 1
 I: 0 1 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0
 ;
-name: {27_MID_dominance-low_category-6_rich-7_dataSeed-0_freq-2_word}
-freq: 2
+name: {27_MID_dominance-low_category-6_rich-7_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0
 ;
@@ -168,38 +168,38 @@ freq: 1
 I: 0 1 0 1 0 0 1 0 1 0 0 0 1 1 0 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1
 ;
-name: {34_SIS_dominance-high_category-3_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {34_SIS_dominance-high_category-3_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 1 0 0 0 0 1 0 0 1 0 0 1 1 0 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1
 ;
-name: {35_BAS_dominance-low_category-7_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {35_BAS_dominance-low_category-7_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0
 ;
-name: {36_LIS_dominance-low_category-1_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {36_LIS_dominance-low_category-1_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 1 0 0 1 0 0 1 1 0 0 0 0
 T: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0
 ;
-name: {37_KUS_dominance-high_category-7_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {37_KUS_dominance-high_category-7_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 1 0 0 1 0 1 0 0 0 1 1 0 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 0
 ;
-name: {38_LUB_dominance-low_category-3_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {38_LUB_dominance-low_category-3_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 1 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {39_LEP_dominance-low_category-2_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {39_LEP_dominance-low_category-2_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 0 1 0 0 1 0 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {40_SAB_dominance-high_category-0_rich-13_dataSeed-0_freq-2_word}
-freq: 2
+name: {40_SAB_dominance-high_category-0_rich-13_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1
 T: 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -213,8 +213,8 @@ freq: 1
 I: 0 1 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {43_DAS_dominance-low_category-7_rich-14_dataSeed-0_freq-2_word}
-freq: 2
+name: {43_DAS_dominance-low_category-7_rich-14_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 1 0 0 1 0 0 0 0 1 1 1 0 0 0 0
 T: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0
 ;
@@ -223,13 +223,13 @@ freq: 1
 I: 0 0 1 0 0 1 1 0 0 0 0 1 0 1 0 0 0 1
 T: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0
 ;
-name: {45_SIT_dominance-low_category-6_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {45_SIT_dominance-low_category-6_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
 ;
-name: {46_SOP_dominance-low_category-2_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {46_SOP_dominance-low_category-2_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -253,13 +253,13 @@ freq: 1
 I: 0 0 0 0 1 1 1 0 1 0 0 0 1 1 0 0 0 0
 T: 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0
 ;
-name: {51_PUN_dominance-high_category-5_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {51_PUN_dominance-high_category-5_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0
 ;
-name: {52_SOK_dominance-low_category-0_rich-14_dataSeed-0_freq-2_word}
-freq: 2
+name: {52_SOK_dominance-low_category-0_rich-14_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0
 T: 0 0 1 0 0 1 0 0 1 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0
 ;
@@ -268,8 +268,8 @@ freq: 1
 I: 0 1 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 1
 T: 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0
 ;
-name: {54_MON_dominance-high_category-6_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {54_MON_dominance-high_category-6_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0
 T: 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
 ;
@@ -298,18 +298,18 @@ freq: 1
 I: 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0
 ;
-name: {60_DAN_dominance-low_category-4_rich-16_dataSeed-0_freq-2_word}
-freq: 2
+name: {60_DAN_dominance-low_category-4_rich-16_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 1 0 0 1 0 0 0 0 1 1 0 0 0 1 0
 T: 0 1 0 0 0 1 0 0 0 0 0 0 1 1 1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {61_MOB_dominance-low_category-2_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {61_MOB_dominance-low_category-2_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 0 1 1
 T: 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {62_KAN_dominance-low_category-5_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {62_KAN_dominance-low_category-5_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 1 0 0 1 0 0 0 0 1 1 0 0 0 1 0
 T: 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
 ;
@@ -318,18 +318,18 @@ freq: 1
 I: 1 1 0 0 0 0 0 1 0 0 1 0 1 0 0 1 0 0
 T: 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
 ;
-name: {64_BAL_dominance-high_category-4_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {64_BAL_dominance-high_category-4_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 0 1 1 1 0 0 0 0 1 0 1 0 1 0 0
 T: 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
 ;
-name: {65_SUM_dominance-high_category-1_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {65_SUM_dominance-high_category-1_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 1
 T: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0
 ;
-name: {66_BOT_dominance-low_category-3_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {66_BOT_dominance-low_category-3_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 0 1 1 0 0 0 1 0 1 0 1 0 0 0 1
 T: 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1
 ;
@@ -338,8 +338,8 @@ freq: 1
 I: 0 1 1 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {68_DID_dominance-low_category-0_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {68_DID_dominance-low_category-0_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0
 T: 0 0 1 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0
 ;
@@ -353,8 +353,8 @@ freq: 1
 I: 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 0
 ;
-name: {71_NOR_dominance-low_category-4_rich-16_dataSeed-0_freq-2_word}
-freq: 2
+name: {71_NOR_dominance-low_category-4_rich-16_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 0 0 0 1 0 1 0 1 1 0 0 0
 T: 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -373,13 +373,13 @@ freq: 1
 I: 0 1 0 0 0 1 0 1 0 0 1 0 1 0 0 1 0 0
 T: 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 1
 ;
-name: {75_MUS_dominance-low_category-1_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {75_MUS_dominance-low_category-1_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 1 0 1 0 0 0 1 1 0 0 0 0
 T: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
 ;
-name: {76_LAL_dominance-low_category-6_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {76_LAL_dominance-low_category-6_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 1 0 0 0 0 1 0 1 0 1 0 0
 T: 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -393,8 +393,8 @@ freq: 1
 I: 1 0 0 1 0 0 1 0 1 0 0 0 1 1 0 0 0 0
 T: 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0
 ;
-name: {79_ROB_dominance-high_category-2_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {79_ROB_dominance-high_category-2_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1
 T: 0 0 1 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
@@ -403,18 +403,18 @@ freq: 1
 I: 1 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {81_LAR_dominance-high_category-3_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {81_LAR_dominance-high_category-3_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 1 0 0 0 0 1 0 1 1 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1
 ;
-name: {82_NAB_dominance-high_category-5_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {82_NAB_dominance-high_category-5_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 1 0
 ;
-name: {83_NUM_dominance-low_category-5_rich-17_dataSeed-0_freq-2_word}
-freq: 2
+name: {83_NUM_dominance-low_category-5_rich-17_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 0 1
 T: 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0
 ;
@@ -423,13 +423,13 @@ freq: 1
 I: 0 0 1 0 0 1 0 0 0 1 0 1 1 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
 ;
-name: {85_LEL_dominance-high_category-2_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {85_LEL_dominance-high_category-2_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 0 1 0 0 1 0 0 1 0 1 0 0
 T: 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {86_KIN_dominance-high_category-7_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {86_KIN_dominance-high_category-7_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0
 ;
@@ -438,8 +438,8 @@ freq: 1
 I: 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
 ;
-name: {88_PAN_dominance-low_category-5_rich-16_dataSeed-0_freq-2_word}
-freq: 2
+name: {88_PAN_dominance-low_category-5_rich-16_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 1 0 0 0 0 1 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0
 ;
@@ -453,8 +453,8 @@ freq: 1
 I: 1 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {91_TAP_dominance-low_category-0_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {91_TAP_dominance-low_category-0_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 0 0 1 1 0 0 0 0 1 1 0 0 0 1 0
 T: 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -463,33 +463,33 @@ freq: 1
 I: 1 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0
 T: 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0
 ;
-name: {93_TOS_dominance-low_category-1_rich-8_dataSeed-0_freq-2_word}
-freq: 2
+name: {93_TOS_dominance-low_category-1_rich-8_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 0 0 1 0 0 0 1 0 1 1 1 0 0 0 0
 T: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
 ;
-name: {94_PUD_dominance-low_category-5_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {94_PUD_dominance-low_category-5_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 1 0 1 0 0 0 1 0 0 1 0 0
 T: 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0
 ;
-name: {95_TUK_dominance-high_category-7_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {95_TUK_dominance-high_category-7_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 0 0 1 1 0 1 0 0 0 0 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 1 0 1 0 1 1 0 0 0 0 0 0
 ;
-name: {96_BIS_dominance-high_category-6_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {96_BIS_dominance-high_category-6_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 0 1 1 1 0 0 1 0 0 1 1 0 0 0 0
 T: 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
 ;
-name: {97_RUS_dominance-high_category-0_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {97_RUS_dominance-high_category-0_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 1 0 0 0 1 0 1 0 0 0 1 1 0 0 0 0
 T: 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {98_MED_dominance-low_category-3_rich-7_dataSeed-0_freq-2_word}
-freq: 2
+name: {98_MED_dominance-low_category-3_rich-7_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 0 1 0 0 1 0 1 0 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0
 ;
@@ -498,8 +498,8 @@ freq: 1
 I: 0 1 1 0 0 0 0 0 0 1 0 1 1 0 0 1 0 0
 T: 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1
 ;
-name: {100_PEP_dominance-high_category-0_rich-7_dataSeed-0_freq-2_word}
-freq: 2
+name: {100_PEP_dominance-high_category-0_rich-7_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 0 1 0 0 1 0 1 0 0 0 1 0
 T: 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -513,8 +513,8 @@ freq: 1
 I: 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1
 T: 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {103_LUD_dominance-low_category-7_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {103_LUD_dominance-low_category-7_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 1 0 0 1 0 1 0 0 0 1 0 0 1 0 0
 T: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0
 ;
@@ -523,8 +523,8 @@ freq: 1
 I: 0 0 0 0 1 1 0 0 0 1 0 1 1 1 0 0 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
-name: {105_MEP_dominance-high_category-1_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {105_MEP_dominance-high_category-1_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 0 1 0 0 1 0 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0
 ;
@@ -548,33 +548,33 @@ freq: 1
 I: 0 1 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1
 T: 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {110_DAD_dominance-high_category-1_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {110_DAD_dominance-high_category-1_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 1 0 0 1 0 0 0 0 1 1 0 0 1 0 0
 T: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0
 ;
-name: {111_RIS_dominance-low_category-4_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {111_RIS_dominance-low_category-4_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 1 0 0 0 1 0 0 1 0 0 1 1 0 0 0 0
 T: 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {112_MOL_dominance-low_category-0_rich-10_dataSeed-0_freq-2_word}
-freq: 2
+name: {112_MOL_dominance-low_category-0_rich-10_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 0 0 0 1 0 1 0 1 0 1 0 0
 T: 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {113_KAT_dominance-low_category-1_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {113_KAT_dominance-low_category-1_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 0 0 0
 ;
-name: {114_TEN_dominance-high_category-1_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {114_TEN_dominance-high_category-1_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 0 0 1 0 1 0 0 1 0 1 0 0 0 1 0
 T: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 1 0 1 0 0
 ;
-name: {115_ROL_dominance-high_category-4_rich-7_dataSeed-0_freq-2_word}
-freq: 2
+name: {115_ROL_dominance-high_category-4_rich-7_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 1 0 0 0 0 0 0 1 0 1 0 1 0 1 0 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
@@ -583,13 +583,13 @@ freq: 1
 I: 0 1 0 1 0 0 1 0 1 0 0 0 1 0 0 0 1 0
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 1 0 0
 ;
-name: {117_RAL_dominance-high_category-6_rich-12_dataSeed-0_freq-2_word}
-freq: 2
+name: {117_RAL_dominance-high_category-6_rich-12_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 1 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0
 T: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0
 ;
-name: {118_NOT_dominance-low_category-2_rich-8_dataSeed-0_freq-2_word}
-freq: 2
+name: {118_NOT_dominance-low_category-2_rich-8_dataSeed-0_freq-4_word}
+freq: 4
 I: 1 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 0 1
 T: 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 ;
@@ -608,8 +608,8 @@ freq: 1
 I: 0 1 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0
 T: 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ;
-name: {122_MOT_dominance-high_category-5_rich-11_dataSeed-0_freq-2_word}
-freq: 2
+name: {122_MOT_dominance-high_category-5_rich-11_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 0 1 0 0 1 0 0 0 1 0 1 0 1 0 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0
 ;
@@ -623,8 +623,8 @@ freq: 1
 I: 0 0 1 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1
 T: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0
 ;
-name: {125_TEM_dominance-low_category-6_rich-9_dataSeed-0_freq-2_word}
-freq: 2
+name: {125_TEM_dominance-low_category-6_rich-9_dataSeed-0_freq-4_word}
+freq: 4
 I: 0 1 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 1
 T: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0
 ;

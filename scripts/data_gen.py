@@ -1,14 +1,5 @@
 import numpy as np
-from numpy.core.defchararray import asarray
-from numpy.lib.arraysetops import unique
-from sklearn.model_selection import train_test_split
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Bidirectional, SimpleRNN, LSTM, Embedding, Dropout
-from keras import utils as np_utils
-import os.path
-from os import path
+import os
 import math
 
 
@@ -256,7 +247,7 @@ class DataGenerator:
                     continue
 
                 cats[c][m] = item[:nFeatures]
-                freq = 1 if m % 2 == 0 else 2
+                freq = 1 if m % 2 == 0 else 4
                 richness = np.sum(cats[c][m][:nFeatures])
                 members_info_map[m] = {'category': 'category-' + str(category_num),
                                        'dominance': dominance, 'ex': cats[c][m][:nFeatures], 'freq': freq, 'richness': richness}
